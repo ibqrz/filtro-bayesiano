@@ -1,0 +1,42 @@
+Quero que atue como um desenvolvedor python especialista. Sua tarefa é criar um script Python simples e funcional para classificar e-mails em SPAM ou NORMAL (HAM) com base em um filtro bayesiano simplificado por pontuação probabilística.
+
+Siga estritamente as regras e especificações abaixo:
+
+1. BASE DE CONHECIMENTO (DICIONÁRIO DE PESOS):
+Crie um dicionário em Python com as seguintes palavras-chave e seus respectivos pesos de risco:
+- 'pix': 0.9
+- 'grátis': 0.8
+- 'urgente': 0.7
+- 'reunião': 0.1
+- 'aula': 0.05
+
+2. LÓGICA DE PROCESSAMENTO E CLASSIFICAÇÃO:
+- Crie uma função que receba o texto de um e-mail.
+- O texto deve ser convertido para minúsculas e tokenizado/limpo de forma simples para identificar as palavras presentes no dicionário.
+- Identifique todas as palavras do e-mail que estão presentes na base de conhecimento.
+- Calcule a MÉDIA DOS PESOS apenas das palavras encontradas.
+  * Nota: Se nenhuma palavra do dicionário for encontrada no e-mail, a média deve ser 0.0.
+- Regra de Decisão:
+  * Se Média dos Pesos >= 0.50 -> Classificação: 'SPAM'
+  * Se Média dos Pesos < 0.50 -> Classificação: 'E-MAIL NORMAL (HAM)'
+
+3. FORMATO DE SAÍDA / RELATÓRIO:
+Para cada e-mail analisado, o script deve imprimir um relatório claro no terminal exibindo:
+- O texto do e-mail original
+- As palavras do dicionário que foram detectadas e seus respectivos pesos
+- O cálculo detalhado da média
+- O resultado final da classificação (SPAM ou NORMAL)
+
+4. VALIDAÇÃO OBRIGATÓRIA (CENÁRIOS DE TESTE):
+No final do arquivo, inclua a execução dos dois cenários de teste abaixo para demonstrar o funcionamento:
+
+Cenário 1:
+email_1 = "Urgente receba seu pix grátis agora"
+(Resultado esperado: SPAM com média 0.80)
+
+Cenário 2:
+email_2 = "Confirmação de reunião para a aula de amanhã"
+(Resultado esperado: NORMAL com média 0.075)
+
+REQUISITOS ADICIONAIS:
+- Forneça apenas o código Python completo, limpo, bem comentado e pronto para execução, sem dependências externas (utilize apenas a biblioteca padrão do Python).
